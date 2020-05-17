@@ -34,7 +34,7 @@ public class IUATest {
     }
 
     @Test(priority = 1)
-    public void loginIntoSite() throws InterruptedException{
+    public void loginIntoSite(){
         WebElement searchLoginPage = driver.findElement(By.cssSelector("body > div.Branding_header.page_medium.clear > div.Header.clear > ul.user_menu > li.first > a"));
         searchLoginPage.click();
 
@@ -53,7 +53,7 @@ public class IUATest {
     }
 
     @Test(priority = 2)
-    public void loginIntoSiteIncorrectData() throws InterruptedException{
+    public void loginIntoSiteIncorrectData(){
         WebElement searchLoginPage = driver.findElement(By.cssSelector("body > div.Branding_header.page_medium.clear > div.Header.clear > ul.user_menu > li.first > a"));
         searchLoginPage.click();
 
@@ -99,6 +99,8 @@ public class IUATest {
 
         WebElement fillInBody = driver.findElement(By.xpath("//*[@id='text']"));
         fillInBody.sendKeys(BODY);
+
+        Thread.sleep(10000);
 
         WebElement sendEmail = driver.findElement(By.xpath("/html/body/div[4]/div[6]/div[1]/div[1]/p[1]/input[1]"));
         sendEmail.click();
