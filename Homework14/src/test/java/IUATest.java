@@ -35,8 +35,8 @@ public class IUATest {
 
     @Test(priority = 1)
     public void loginIntoSite(){
-        WebElement searchLoginPage = driver.findElement(By.cssSelector("body > div.Branding_header.page_medium.clear > div.Header.clear > ul.user_menu > li.first > a"));
-        searchLoginPage.click();
+        WebElement enterButton = driver.findElement(By.xpath("/html/body/div[2]/div[3]/ul[1]/li[2]/a"));
+        enterButton.click();
 
         WebElement enterLogin = driver.findElement(By.xpath("//*[@id='FloatLogin']/div/div/form/fieldset/p[1]/input"));
         enterLogin.sendKeys(EMAIL);
@@ -54,8 +54,8 @@ public class IUATest {
 
     @Test(priority = 2)
     public void loginIntoSiteIncorrectData(){
-        WebElement searchLoginPage = driver.findElement(By.cssSelector("body > div.Branding_header.page_medium.clear > div.Header.clear > ul.user_menu > li.first > a"));
-        searchLoginPage.click();
+        WebElement enterButton = driver.findElement(By.xpath("/html/body/div[2]/div[3]/ul[1]/li[2]/a"));
+        enterButton.click();
 
         WebElement enterLogin = driver.findElement(By.xpath("//*[@id='FloatLogin']/div/div/form/fieldset/p[1]/input"));
         enterLogin.sendKeys(EMAIL);
@@ -73,8 +73,8 @@ public class IUATest {
 
     @Test(priority = 3)
         public void sendingEmailAndVerification() throws InterruptedException{
-        WebElement searchLoginPage = driver.findElement(By.cssSelector("body > div.Branding_header.page_medium.clear > div.Header.clear > ul.user_menu > li.first > a"));
-        searchLoginPage.click();
+        WebElement enterButton = driver.findElement(By.xpath("/html/body/div[2]/div[3]/ul[1]/li[2]/a"));
+        enterButton.click();
 
         WebElement enterLogin = driver.findElement(By.xpath("//*[@id='FloatLogin']/div/div/form/fieldset/p[1]/input"));
         enterLogin.sendKeys(LOGIN);
@@ -100,7 +100,7 @@ public class IUATest {
         WebElement fillInBody = driver.findElement(By.xpath("//*[@id='text']"));
         fillInBody.sendKeys(BODY);
 
-        Thread.sleep(10000);
+        Thread.sleep(1000);
 
         WebElement sendEmail = driver.findElement(By.xpath("/html/body/div[4]/div[6]/div[1]/div[1]/p[1]/input[1]"));
         sendEmail.click();
